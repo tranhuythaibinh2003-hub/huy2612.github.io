@@ -1,0 +1,1475 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f2eb">
+  <meta name="description" content="Thùy Trang Event gửi lời chúc yêu thương đến những người phụ nữ tuyệt vời nhân ngày 20 tháng 10.">
+  <title>20.10 — Gửi những đóa hoa | Thùy Trang Event</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f2eb;
+      --paper-deep: #efe6dc;
+      --ink: #30251f;
+      --muted: #82746a;
+      --wine: #713d4c;
+      --rose: #bc817e;
+      --line: rgba(48, 37, 31, .15);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", sans-serif;
+      --gutter: clamp(24px, 6.3vw, 104px);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    body::after {
+      position: fixed;
+      z-index: 10;
+      inset: 0;
+      pointer-events: none;
+      content: "";
+      opacity: .13;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.88' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    img { display: block; width: 100%; }
+    ::selection { color: var(--paper); background: var(--wine); }
+
+    .scroll-progress {
+      position: fixed;
+      z-index: 30;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 2px;
+      transform: scaleX(0);
+      transform-origin: left;
+      background: var(--wine);
+    }
+    .cursor {
+      position: fixed;
+      z-index: 40;
+      top: 0;
+      left: 0;
+      width: 28px;
+      height: 28px;
+      border: 1px solid rgba(113, 61, 76, .7);
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      transition: width .25s ease, height .25s ease, background .25s ease, opacity .3s ease;
+    }
+    .cursor.is-visible { opacity: 1; }
+    .cursor.is-hovering {
+      width: 58px;
+      height: 58px;
+      background: rgba(188, 129, 126, .14);
+    }
+
+    .topbar {
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 27px var(--gutter);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .brand-mark {
+      display: block;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .topbar-note {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: min(850px, 100svh);
+      min-height: min(850px, 100vh);
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      overflow: hidden;
+      padding: 110px var(--gutter) 74px;
+    }
+    .hero-copy { position: relative; z-index: 2; padding: 18px 0 0 clamp(0px, 3vw, 48px); }
+    .eyebrow, .section-index {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--wine);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      width: 30px;
+      height: 1px;
+      background: var(--rose);
+      content: "";
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    .hero h1 {
+      max-width: 680px;
+      margin: 26px 0 23px;
+      font-family: var(--serif);
+      font-size: clamp(66px, 9.2vw, 142px);
+      font-weight: 500;
+      letter-spacing: -.075em;
+      line-height: .91;
+    }
+    .hero h1 em { color: var(--wine); font-weight: 500; }
+    .hero-subtitle {
+      max-width: 380px;
+      margin: 0 0 34px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--wine);
+      color: var(--wine);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: gap .3s ease;
+    }
+    .text-link:hover { gap: 26px; }
+    .text-link span { font-size: 17px; line-height: .7; }
+    .hero-art {
+      position: relative;
+      width: min(100%, 610px);
+      height: min(66vh, 650px);
+      min-height: 440px;
+      justify-self: end;
+      margin-right: clamp(0px, 3vw, 48px);
+    }
+    .hero-photo {
+      position: absolute;
+      inset: 3% 9% 3% 10%;
+      overflow: hidden;
+      border-radius: 48% 48% 2px 2px;
+      background: #d7bbb0;
+      transform: rotate(2deg);
+    }
+    .hero-photo img {
+      height: 112%;
+      object-fit: cover;
+      object-position: 51% 50%;
+      transform: scale(1.05);
+      will-change: transform;
+    }
+    .hero-orbit {
+      position: absolute;
+      z-index: 2;
+      top: 9%;
+      right: 1%;
+      display: grid;
+      width: clamp(88px, 12vw, 150px);
+      aspect-ratio: 1;
+      place-items: center;
+      border: 1px solid rgba(113, 61, 76, .45);
+      border-radius: 50%;
+      color: var(--wine);
+      animation: rotate 24s linear infinite;
+    }
+    .hero-orbit span {
+      max-width: 85px;
+      font-size: 9px;
+      letter-spacing: .16em;
+      line-height: 1.8;
+      text-align: center;
+      text-transform: uppercase;
+      animation: rotate 24s linear infinite reverse;
+    }
+    .hero-stamp {
+      position: absolute;
+      z-index: 2;
+      right: 3%;
+      bottom: 5%;
+      display: grid;
+      width: clamp(110px, 14vw, 174px);
+      aspect-ratio: 1;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--wine);
+      color: var(--paper);
+      text-align: center;
+      transform: rotate(-11deg);
+    }
+    .hero-stamp strong {
+      font-family: var(--serif);
+      font-size: clamp(31px, 4vw, 49px);
+      font-weight: 500;
+      line-height: .95;
+    }
+    .hero-stamp small { display: block; margin-top: 8px; font-size: 8px; letter-spacing: .2em; }
+    .hero-caption {
+      position: absolute;
+      bottom: 13%;
+      left: 0;
+      color: var(--muted);
+      font-family: var(--serif);
+      font-size: 13px;
+      font-style: italic;
+      transform: rotate(-90deg) translateX(-100%);
+      transform-origin: left bottom;
+    }
+    .scroll-cue {
+      position: absolute;
+      bottom: 27px;
+      left: 50%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      transform: translateX(-50%);
+    }
+    .scroll-cue::after {
+      width: 35px;
+      height: 1px;
+      background: var(--rose);
+      content: "";
+      animation: line-pulse 1.7s ease-in-out infinite;
+    }
+
+    .ticker {
+      overflow: hidden;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--paper-deep);
+    }
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      align-items: center;
+      gap: 26px;
+      padding: 18px 0;
+      animation: marquee 32s linear infinite;
+    }
+    .ticker-track span {
+      color: var(--wine);
+      font-family: var(--serif);
+      font-size: 16px;
+      font-style: italic;
+      white-space: nowrap;
+    }
+    .ticker-track i { color: var(--rose); font-size: 15px; font-style: normal; }
+
+    .message {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 8vw;
+      padding: clamp(100px, 15vw, 205px) var(--gutter);
+    }
+    .message-aside { padding-top: 13px; }
+    .message-aside p {
+      max-width: 220px;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+    .message-copy { max-width: 790px; }
+    .message-copy h2 {
+      margin-bottom: 29px;
+      font-family: var(--serif);
+      font-size: clamp(39px, 6vw, 78px);
+      font-weight: 500;
+      letter-spacing: -.055em;
+      line-height: 1.14;
+    }
+    .message-copy h2 em { color: var(--wine); font-weight: 500; }
+    .message-copy > p {
+      max-width: 570px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 2;
+    }
+    .signature {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 32px;
+      color: var(--wine);
+      font-family: var(--serif);
+      font-size: 21px;
+      font-style: italic;
+    }
+    .signature::before { width: 30px; height: 1px; background: var(--rose); content: ""; }
+
+    .wishes {
+      padding: clamp(76px, 10vw, 132px) var(--gutter);
+      background: #eee5dc;
+    }
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 35px;
+      margin-bottom: 54px;
+    }
+    .section-heading h2 {
+      max-width: 600px;
+      margin: 19px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(44px, 6.5vw, 82px);
+      font-weight: 500;
+      letter-spacing: -.065em;
+      line-height: 1;
+    }
+    .section-heading h2 em { color: var(--wine); }
+    .section-heading > p {
+      max-width: 240px;
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+    .wish-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+    }
+    .wish-card {
+      position: relative;
+      min-height: 260px;
+      padding: 30px 25px 34px 0;
+    }
+    .wish-card + .wish-card { padding-left: 26px; border-left: 1px solid var(--line); }
+    .wish-number { color: var(--rose); font-family: var(--serif); font-size: 15px; font-style: italic; }
+    .wish-card h3 {
+      margin: 45px 0 13px;
+      font-family: var(--serif);
+      font-size: clamp(25px, 3vw, 38px);
+      font-weight: 500;
+      letter-spacing: -.035em;
+    }
+    .wish-card p { max-width: 290px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.9; }
+    .wish-flower {
+      position: absolute;
+      top: 23px;
+      right: 23px;
+      color: var(--rose);
+      font-family: var(--serif);
+      font-size: 24px;
+      transition: transform .5s cubic-bezier(.2,.8,.2,1);
+    }
+    .wish-card:hover .wish-flower { transform: rotate(45deg) scale(1.25); }
+
+    .gallery {
+      padding: clamp(100px, 14vw, 180px) var(--gutter);
+    }
+    .gallery-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 54px;
+    }
+    .gallery-top h2 {
+      max-width: 500px;
+      margin: 19px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(43px, 6vw, 77px);
+      font-weight: 500;
+      letter-spacing: -.06em;
+      line-height: 1.04;
+    }
+    .gallery-top h2 em { color: var(--wine); }
+    .gallery-top > p {
+      max-width: 230px;
+      margin: 43px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .78fr 1.05fr;
+      align-items: start;
+      gap: 18px;
+    }
+    .gallery-item { margin: 0; }
+    .gallery-item:nth-child(2) { margin-top: 100px; }
+    .gallery-frame { position: relative; overflow: hidden; background: #dfd1c4; }
+    .gallery-frame::after {
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(48, 37, 31, .08);
+      content: "";
+      pointer-events: none;
+    }
+    .gallery-frame img {
+      height: clamp(220px, 35vw, 470px);
+      object-fit: cover;
+      transition: transform .9s cubic-bezier(.2,.7,.2,1);
+    }
+    .gallery-item:nth-child(2) .gallery-frame img { height: clamp(180px, 28vw, 370px); }
+    .gallery-item:hover .gallery-frame img { transform: scale(1.055); }
+    .gallery-item figcaption {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 13px;
+      color: var(--muted);
+      font-family: var(--serif);
+      font-size: 13px;
+      font-style: italic;
+    }
+    .gallery-item figcaption span:last-child {
+      font-family: var(--sans);
+      font-size: 9px;
+      font-style: normal;
+      letter-spacing: .1em;
+    }
+
+    .closing {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(100px, 15vw, 190px) var(--gutter) 74px;
+      background: var(--wine);
+      color: var(--paper);
+      text-align: center;
+    }
+    .closing::before, .closing::after {
+      position: absolute;
+      width: 280px;
+      aspect-ratio: 1;
+      border: 1px solid rgba(247, 242, 235, .17);
+      border-radius: 50%;
+      content: "";
+    }
+    .closing::before { top: -125px; left: -110px; }
+    .closing::after { right: -125px; bottom: -155px; width: 370px; }
+    .closing .eyebrow { justify-content: center; color: #e6c1b9; }
+    .closing .eyebrow::before { background: #c99491; }
+    .closing h2 {
+      max-width: 900px;
+      margin: 24px auto 20px;
+      font-family: var(--serif);
+      font-size: clamp(49px, 8.2vw, 110px);
+      font-weight: 500;
+      letter-spacing: -.065em;
+      line-height: .99;
+    }
+    .closing h2 em { color: #e4b7ae; }
+    .closing-copy {
+      max-width: 410px;
+      margin: 0 auto 32px;
+      color: rgba(247, 242, 235, .72);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+    .wish-button {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 0 22px;
+      border: 1px solid rgba(247, 242, 235, .65);
+      border-radius: 0;
+      background: transparent;
+      color: var(--paper);
+      cursor: pointer;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: background .3s ease, color .3s ease, transform .3s ease;
+    }
+    .wish-button:hover { transform: translateY(-3px); background: var(--paper); color: var(--wine); }
+    .wish-button span { font-size: 16px; }
+    .closing-foot {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      margin-top: clamp(90px, 13vw, 160px);
+      padding-top: 20px;
+      border-top: 1px solid rgba(247, 242, 235, .22);
+      color: rgba(247, 242, 235, .68);
+      font-size: 9px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .wish-note {
+      position: fixed;
+      z-index: 50;
+      right: 24px;
+      bottom: 24px;
+      max-width: min(370px, calc(100vw - 48px));
+      padding: 18px 22px;
+      border: 1px solid rgba(48, 37, 31, .12);
+      background: var(--paper);
+      box-shadow: 0 12px 40px rgba(48, 37, 31, .12);
+      color: var(--wine);
+      font-family: var(--serif);
+      font-size: 16px;
+      line-height: 1.55;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(15px);
+      transition: opacity .35s ease, transform .35s ease;
+    }
+    .wish-note.is-visible { opacity: 1; transform: translateY(0); }
+
+    .admin-trigger {
+      position: fixed;
+      z-index: 60;
+      bottom: 22px;
+      left: 22px;
+      min-height: 42px;
+      padding: 0 16px;
+      border: 1px solid var(--wine);
+      background: var(--paper);
+      box-shadow: 0 6px 24px rgba(48, 37, 31, .12);
+      color: var(--wine);
+      cursor: pointer;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .admin-trigger:hover { background: var(--wine); color: var(--paper); }
+    .admin-dialog {
+      width: min(760px, calc(100% - 32px));
+      max-height: min(88vh, 820px);
+      padding: 0;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: 0 24px 90px rgba(48, 37, 31, .28);
+    }
+    .admin-dialog::backdrop { background: rgba(35, 25, 23, .56); backdrop-filter: blur(3px); }
+    .admin-content { max-height: min(88vh, 820px); padding: clamp(22px, 5vw, 38px); overflow-y: auto; }
+    .admin-heading { display: flex; align-items: start; justify-content: space-between; gap: 20px; margin-bottom: 24px; }
+    .admin-heading h2 { margin: 0 0 7px; font-family: var(--serif); font-size: 30px; font-weight: 500; }
+    .admin-heading p, .admin-help { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+    .admin-tabs { display: flex; gap: 6px; overflow-x: auto; margin-bottom: 22px; border-bottom: 1px solid var(--line); }
+    .admin-tab { flex: 0 0 auto; padding: 11px 14px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--muted); cursor: pointer; font: 600 10px var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+    .admin-tab[aria-selected="true"] { border-bottom-color: var(--wine); color: var(--wine); }
+    .admin-panel[hidden] { display: none; }
+    .admin-panel-title { margin: 0 0 15px; font: 500 20px var(--serif); }
+    .admin-close {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 20px;
+    }
+    .admin-fields { display: grid; gap: 15px; }
+    .admin-fields[hidden] { display: none; }
+    .admin-fields label { display: grid; gap: 7px; color: var(--wine); font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+    .admin-fields input, .admin-fields textarea {
+      width: 100%;
+      min-height: 42px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: #fffdf9;
+      color: var(--ink);
+      font: 13px var(--sans);
+      letter-spacing: normal;
+      text-transform: none;
+    }
+    .admin-fields textarea { min-height: 76px; resize: vertical; line-height: 1.6; }
+    .admin-fields input[type="color"] { width: 100%; height: 44px; padding: 4px; cursor: pointer; }
+    .admin-fields input[type="file"] { min-height: 0; padding: 9px; font-size: 11px; }
+    .admin-colors { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .admin-subsection { margin: 23px 0 12px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+    .admin-subsection:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+    .admin-media-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: end; }
+    .admin-preview { width: 100%; max-height: 150px; margin-top: 10px; object-fit: cover; border: 1px solid var(--line); background: var(--paper-deep); }
+    .admin-music {
+      position: fixed;
+      z-index: 55;
+      right: 22px;
+      bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      max-width: min(310px, calc(100vw - 44px));
+      padding: 11px 14px;
+      border: 1px solid rgba(48, 37, 31, .15);
+      background: var(--paper);
+      box-shadow: 0 6px 24px rgba(48, 37, 31, .12);
+    }
+    .admin-music[hidden] { display: none; }
+    .admin-music button { width: 34px; height: 34px; flex: 0 0 auto; border: 0; border-radius: 50%; background: var(--wine); color: var(--paper); cursor: pointer; }
+    .admin-music-copy { min-width: 0; }
+    .admin-music-copy strong, .admin-music-copy span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .admin-music-copy strong { color: var(--ink); font: 600 11px var(--sans); }
+    .admin-music-copy span { margin-top: 3px; color: var(--muted); font-size: 10px; }
+    .admin-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .admin-actions button {
+      min-height: 42px;
+      padding: 0 15px;
+      border: 1px solid var(--wine);
+      background: var(--wine);
+      color: var(--paper);
+      cursor: pointer;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .admin-actions button[type="button"] { background: transparent; color: var(--wine); }
+    .admin-status { min-height: 20px; margin: 13px 0 0; color: var(--wine); font-size: 12px; }
+    .admin-help { margin-top: 10px; font-size: 11px; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1);
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: .12s; }
+    .reveal-delay-2 { transition-delay: .24s; }
+    .reveal-delay-3 { transition-delay: .36s; }
+    @keyframes rotate { to { transform: rotate(360deg); } }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+    @keyframes line-pulse { 0%, 100% { transform: scaleX(.55); transform-origin: left; } 50% { transform: scaleX(1); } }
+
+    @media (min-width: 1500px) {
+      .hero { min-height: 900px; }
+      .hero-art { height: 710px; }
+    }
+    @media (max-width: 760px) {
+      :root { --gutter: 25px; }
+      .topbar { padding-top: 19px; }
+      .topbar-note { font-size: 8px; }
+      .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        padding-top: 122px;
+        padding-bottom: 88px;
+      }
+      .hero-copy { padding: 0; }
+      .hero h1 { margin-top: 23px; font-size: clamp(67px, 16vw, 112px); }
+      .hero-subtitle { max-width: 340px; font-size: 13px; }
+      .hero-art { width: min(100%, 520px); height: 112vw; min-height: 360px; max-height: 570px; justify-self: center; margin: 28px 0 0; }
+      .hero-photo { inset: 2% 9% 2% 11%; }
+      .hero-caption { bottom: 9%; left: 4px; }
+      .scroll-cue { bottom: 27px; }
+      .message { grid-template-columns: 1fr; gap: 30px; padding-top: 105px; padding-bottom: 105px; }
+      .message-aside p { max-width: 310px; margin-top: 16px; }
+      .message-copy h2 { font-size: clamp(42px, 10vw, 68px); }
+      .section-heading { align-items: start; flex-direction: column; gap: 19px; margin-bottom: 35px; }
+      .section-heading > p { max-width: 350px; }
+      .wish-grid { grid-template-columns: 1fr; }
+      .wish-card { min-height: auto; padding: 25px 36px 28px 0; }
+      .wish-card + .wish-card { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+      .wish-card h3 { margin: 26px 0 8px; }
+      .wish-card p { max-width: 360px; }
+      .gallery-top { flex-direction: column; gap: 9px; margin-bottom: 34px; }
+      .gallery-top > p { margin-top: 12px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; gap: 23px 13px; }
+      .gallery-item:nth-child(2) { margin-top: 46px; }
+      .gallery-item:nth-child(3) { grid-column: 1 / -1; width: 76%; margin-left: auto; }
+      .gallery-frame img { height: 48vw; }
+      .gallery-item:nth-child(2) .gallery-frame img { height: 40vw; }
+      .gallery-item:nth-child(3) .gallery-frame img { height: 68vw; }
+      .closing-foot { gap: 18px; font-size: 8px; }
+      .admin-trigger { bottom: 14px; left: 14px; }
+      .admin-music { right: 14px; bottom: 14px; max-width: calc(100vw - 155px); padding: 8px; }
+      .admin-music-copy span { display: none; }
+      .admin-media-row, .admin-colors { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 420px) {
+      .brand { gap: 8px; font-size: 9px; }
+      .brand-mark { width: 44px; height: 44px; }
+      .topbar-note { max-width: 118px; text-align: right; }
+      .hero { padding-top: 108px; }
+      .hero h1 { font-size: 67px; }
+      .gallery-item figcaption { font-size: 11px; }
+      .closing-foot { flex-direction: column; align-items: center; }
+    }
+    @media (hover: none), (pointer: coarse) {
+      .cursor { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Thùy Trang Event — về đầu trang">
+      <img class="brand-mark" src="thuy-trang-event-logo.jpg" alt="Logo Thùy Trang Event">
+      <span data-admin="brand">Thùy Trang Event</span>
+    </a>
+    <span class="topbar-note" data-admin="dateNote">Ngày Quốc Tế Phụ Nữ</span>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow reveal" data-admin="heroGreeting">Thân gửi những người phụ nữ tuyệt vời</div>
+        <h1 class="reveal reveal-delay-1" data-admin="heroTitle">Dành riêng<br>cho <em>nàng.</em></h1>
+        <p class="hero-subtitle reveal reveal-delay-2" data-admin="heroSubtitle">Một ngày để chậm lại, dịu dàng với chính mình — và nhớ rằng thế giới này đẹp hơn vì có bạn.</p>
+        <a class="text-link reveal reveal-delay-3" href="#loi-thuong">Khám phá lời thương <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="hero-art" aria-label="Bó hoa hồng nhẹ nhàng">
+        <div class="hero-photo">
+          <img class="parallax-image" data-admin="heroImage" src="./1792462174832_213165376333846949_3439058882647357673_d2b63814b7ec7afd6f9dd9899ee2a494.jpg" alt="Ảnh tập thể tại sự kiện Thùy Trang Event" fetchpriority="high">
+        </div>
+        <div class="hero-orbit" aria-hidden="true"><span>shine softly · bloom freely ·</span></div>
+        <div class="hero-stamp"><div><strong>20.10</strong><small>HAPPY WOMEN'S DAY</small></div></div>
+        <div class="hero-caption">For every beautiful soul</div>
+      </div>
+      <a class="scroll-cue" href="#loi-thuong">Cuộn xuống</a>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Đẹp theo cách của riêng mình</span><i>✳</i><span>Mạnh mẽ và dịu dàng</span><i>✳</i><span>Luôn xứng đáng được yêu thương</span><i>✳</i><span>Đẹp theo cách của riêng mình</span><i>✳</i><span>Mạnh mẽ và dịu dàng</span><i>✳</i><span>Luôn xứng đáng được yêu thương</span><i>✳</i>
+      </div>
+    </div>
+
+    <section class="message" id="loi-thuong">
+      <aside class="message-aside reveal">
+        <div class="section-index">01 / Một lời nhắn</div>
+        <p>Gửi đến tất cả những người phụ nữ đã làm nên những điều thật đẹp tại Thùy Trang Event.</p>
+      </aside>
+      <div class="message-copy reveal reveal-delay-1">
+        <h2>Không chỉ hôm nay,<br>bạn luôn là <em>điều tuyệt vời.</em></h2>
+        <p data-admin="message">Cảm ơn các chị, các em — vì sự tận tâm trong từng chi tiết, sự ấm áp trong mỗi lần đồng hành và nguồn năng lượng khiến mọi khoảnh khắc trở nên đáng nhớ. Mong bạn luôn được trân trọng, được yêu thương và tự hào về chính mình.</p>
+        <div class="signature">Thương mến, <span data-admin="brand">Thùy Trang Event</span></div>
+      </div>
+    </section>
+
+    <section class="wishes" aria-labelledby="wishes-title">
+      <div class="section-heading reveal">
+        <div>
+          <div class="section-index">02 / Những điều xứng đáng</div>
+          <h2 id="wishes-title">Chúc nàng luôn<br><em>rạng rỡ như hoa.</em></h2>
+        </div>
+        <p>Và trên hết, mong những điều dịu dàng luôn tìm được đường đến bên bạn.</p>
+      </div>
+      <div class="wish-grid">
+        <article class="wish-card reveal">
+          <span class="wish-number">01</span><span class="wish-flower" aria-hidden="true">✳</span>
+          <h3 data-admin="wishTitle1">Luôn là chính mình</h3>
+          <p data-admin="wishText1">Tự tin với nét riêng, tỏa sáng theo cách chẳng ai có thể thay thế.</p>
+        </article>
+        <article class="wish-card reveal reveal-delay-1">
+          <span class="wish-number">02</span><span class="wish-flower" aria-hidden="true">✳</span>
+          <h3 data-admin="wishTitle2">Được yêu thương đủ đầy</h3>
+          <p data-admin="wishText2">Nhận về thật nhiều quan tâm, trân trọng — không chỉ riêng ngày hôm nay.</p>
+        </article>
+        <article class="wish-card reveal reveal-delay-2">
+          <span class="wish-number">03</span><span class="wish-flower" aria-hidden="true">✳</span>
+          <h3 data-admin="wishTitle3">Rực rỡ mọi hành trình</h3>
+          <p data-admin="wishText3">Gặp nhiều niềm vui mới, nhiều cơ hội hay và những ngày bình yên.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="gallery" aria-labelledby="gallery-title">
+      <div class="gallery-top reveal">
+        <div>
+          <div class="section-index">03 / Vẻ đẹp của nàng</div>
+          <h2 id="gallery-title" data-admin="galleryTitle">Một chút dịu dàng,<br><em>một trời thương mến.</em></h2>
+        </div>
+        <p data-admin="galleryDescription">Cho những khoảnh khắc đẹp, những nụ cười thật tươi và tất cả điều khiến bạn là bạn.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item reveal">
+          <div class="gallery-frame"><img data-admin="galleryImage1" src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Bó hoa tươi thắm dành tặng một người đặc biệt" loading="lazy"></div>
+          <figcaption><span data-admin="galleryCaption1">Một bó hoa, ngàn lời thương</span><span>01 — 03</span></figcaption>
+        </figure>
+        <figure class="gallery-item reveal reveal-delay-1">
+          <div class="gallery-frame"><img data-admin="galleryImage2" src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Những bông hoa nhỏ rực rỡ dưới ánh nắng" loading="lazy"></div>
+          <figcaption><span data-admin="galleryCaption2">Nở rộ theo cách riêng</span><span>02 — 03</span></figcaption>
+        </figure>
+        <figure class="gallery-item reveal reveal-delay-2">
+          <div class="gallery-frame"><img data-admin="galleryImage3" src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Những cánh hoa hồng mềm mại" loading="lazy"></div>
+          <figcaption><span data-admin="galleryCaption3">Dịu dàng và thật kiêu hãnh</span><span>03 — 03</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="closing" id="loi-chuc">
+      <div class="eyebrow reveal">20.10 · <span data-admin="brand">Thùy Trang Event</span></div>
+      <h2 class="reveal reveal-delay-1" data-admin="closingTitle">Gửi nàng muôn<br>vàn <em>điều thương.</em></h2>
+      <p class="closing-copy reveal reveal-delay-2" data-admin="closingMessage">Chúc những người phụ nữ tuyệt vời của Thùy Trang Event một ngày 20/10 thật vui, thật xinh và ngập tràn yêu thương.</p>
+      <button class="wish-button reveal reveal-delay-3" type="button" id="wish-button"><span data-admin="wishButton">Nhận một lời chúc</span> <span aria-hidden="true">♡</span></button>
+      <div class="closing-foot"><span data-admin="footerNote">Với tất cả yêu thương · 20.10</span><span><span data-admin="brand">Thùy Trang Event</span> © 2026</span></div>
+    </section>
+  </main>
+  <div class="wish-note" id="wish-note" role="status" aria-live="polite" data-admin="wishNote">Bạn xứng đáng với mọi điều đẹp đẽ — hôm nay và mỗi ngày. ♡</div>
+  <div class="admin-music" id="admin-music" hidden>
+    <button id="music-toggle" type="button" aria-label="Phát nhạc nền">▶</button>
+    <div class="admin-music-copy"><strong id="music-title">Chúng Ta Của Hiện Tại (Piano Cover)</strong><span id="music-artist">AN COONG · Đang thử phát</span></div>
+    <audio id="background-audio" loop preload="auto" autoplay></audio>
+  </div>
+  <button class="admin-trigger" id="admin-open" type="button" aria-haspopup="dialog" aria-controls="admin-dialog" hidden>Tùy chỉnh</button>
+  <dialog class="admin-dialog" id="admin-dialog" aria-labelledby="admin-title">
+    <div class="admin-content">
+      <div class="admin-heading">
+        <div>
+          <h2 id="admin-title">Tùy chỉnh trang</h2>
+          <p>Chỉnh nội dung và giao diện, thay đổi sẽ hiển thị ngay sau khi lưu.</p>
+        </div>
+        <button class="admin-close" id="admin-close" type="button" aria-label="Đóng">×</button>
+      </div>
+      <div class="admin-tabs" role="tablist" aria-label="Mục tùy chỉnh">
+        <button class="admin-tab" id="tab-content" type="button" role="tab" aria-selected="true" aria-controls="panel-content">Nội dung</button>
+        <button class="admin-tab" id="tab-design" type="button" role="tab" aria-selected="false" aria-controls="panel-design">Giao diện</button>
+        <button class="admin-tab" id="tab-media" type="button" role="tab" aria-selected="false" aria-controls="panel-media">Ảnh &amp; âm thanh</button>
+      </div>
+      <form id="admin-form">
+        <section class="admin-panel" id="panel-content" role="tabpanel" aria-labelledby="tab-content">
+          <h3 class="admin-panel-title">Nội dung trang</h3>
+          <div class="admin-fields">
+            <label>Tên thương hiệu<input name="brand" maxlength="60" required></label>
+            <label>Dòng ghi chú đầu trang<input name="dateNote" maxlength="100" required></label>
+            <label>Lời gửi ở đầu trang<input name="heroGreeting" maxlength="100" required></label>
+            <label>Tiêu đề chính (xuống dòng nếu muốn)<textarea name="heroTitle" maxlength="120" required></textarea></label>
+            <label>Lời giới thiệu<textarea name="heroSubtitle" maxlength="300" required></textarea></label>
+            <label>Nội dung lời nhắn<textarea name="message" maxlength="700" required></textarea></label>
+            <label>Tiêu đề bộ sưu tập<textarea name="galleryTitle" maxlength="120" required></textarea></label>
+            <label>Mô tả bộ sưu tập<textarea name="galleryDescription" maxlength="250" required></textarea></label>
+            <label>Tiêu đề cuối trang (xuống dòng nếu muốn)<textarea name="closingTitle" maxlength="120" required></textarea></label>
+            <label>Lời chúc cuối trang<textarea name="closingMessage" maxlength="300" required></textarea></label>
+            <div class="admin-subsection">Lời chúc dành cho nàng</div>
+            <label>Lời chúc 1<input name="wishTitle1" maxlength="80" required></label>
+            <label>Mô tả lời chúc 1<textarea name="wishText1" maxlength="240" required></textarea></label>
+            <label>Lời chúc 2<input name="wishTitle2" maxlength="80" required></label>
+            <label>Mô tả lời chúc 2<textarea name="wishText2" maxlength="240" required></textarea></label>
+            <label>Lời chúc 3<input name="wishTitle3" maxlength="80" required></label>
+            <label>Mô tả lời chúc 3<textarea name="wishText3" maxlength="240" required></textarea></label>
+            <label>Nhãn nút lời chúc<input name="wishButton" maxlength="60" required></label>
+            <label>Nội dung thông báo khi bấm nút<textarea name="wishNote" maxlength="200" required></textarea></label>
+          </div>
+        </section>
+        <section class="admin-panel" id="panel-design" role="tabpanel" aria-labelledby="tab-design" hidden>
+          <h3 class="admin-panel-title">Màu sắc &amp; nhận diện</h3>
+          <div class="admin-fields">
+            <label>Tiêu đề trang trên trình duyệt<input name="pageTitle" maxlength="100" required></label>
+            <label>Chữ ký cuối trang<input name="footerNote" maxlength="100" required></label>
+            <div class="admin-colors">
+              <label>Màu nhấn<input name="wine" type="color"></label>
+              <label>Màu nền<input name="paper" type="color"></label>
+              <label>Màu nền phụ<input name="paperDeep" type="color"></label>
+              <label>Màu điểm nhấn phụ<input name="rose" type="color"></label>
+            </div>
+          </div>
+        </section>
+        <section class="admin-panel" id="panel-media" role="tabpanel" aria-labelledby="tab-media" hidden>
+          <h3 class="admin-panel-title">Ảnh &amp; âm thanh</h3>
+          <div class="admin-fields">
+            <div class="admin-subsection">Ảnh bìa</div>
+            <div class="admin-media-row">
+              <label>Đường dẫn ảnh<input name="heroImage" type="text" placeholder="https://... hoặc đường dẫn tương đối"></label>
+              <label>Hoặc chọn ảnh từ máy<input name="heroImageFile" type="file" accept="image/*"></label>
+            </div>
+            <img class="admin-preview" id="hero-preview" alt="Xem trước ảnh bìa">
+            <div class="admin-subsection">Ảnh thư viện</div>
+            <div class="admin-media-row"><label>Ảnh 1 — đường dẫn<input name="galleryImage1" type="text"></label><label>Ảnh 1 — chọn tệp<input name="galleryImage1File" type="file" accept="image/*"></label></div>
+            <label>Chú thích ảnh 1<input name="galleryCaption1" maxlength="80" required></label>
+            <div class="admin-media-row"><label>Ảnh 2 — đường dẫn<input name="galleryImage2" type="text"></label><label>Ảnh 2 — chọn tệp<input name="galleryImage2File" type="file" accept="image/*"></label></div>
+            <label>Chú thích ảnh 2<input name="galleryCaption2" maxlength="80" required></label>
+            <div class="admin-media-row"><label>Ảnh 3 — đường dẫn<input name="galleryImage3" type="text"></label><label>Ảnh 3 — chọn tệp<input name="galleryImage3File" type="file" accept="image/*"></label></div>
+            <label>Chú thích ảnh 3<input name="galleryCaption3" maxlength="80" required></label>
+            <div class="admin-subsection">Nhạc nền</div>
+            <label>Tên bài hát<input name="musicTitle" maxlength="100" placeholder="Tên bài hát"></label>
+            <label>Nghệ sĩ<input name="musicArtist" maxlength="80" placeholder="Ví dụ: MONO"></label>
+            <div class="admin-media-row">
+              <label>Đường dẫn tệp âm thanh<input name="musicUrl" type="url" placeholder="https://.../nhac.mp3"></label>
+              <label>Hoặc chọn nhạc từ máy<input name="musicFile" type="file" accept="audio/*"></label>
+            </div>
+            <audio id="admin-audio-preview" controls preload="none" hidden></audio>
+            <p class="admin-help">Dùng tệp nhạc bạn có quyền sử dụng (MP3, WAV, M4A...). Nhạc chỉ phát sau khi khách bấm nút phát; liên kết YouTube/Spotify không phải tệp âm thanh trực tiếp.</p>
+          </div>
+        </section>
+        <p class="admin-help">Cài đặt và tệp tải lên được lưu trong trình duyệt trên thiết bị này; chúng không tự đồng bộ lên máy chủ hay cập nhật tệp HTML gốc.</p>
+        <div class="admin-actions">
+          <button type="submit">Lưu &amp; áp dụng</button>
+          <button id="admin-reset" type="button">Khôi phục mặc định</button>
+        </div>
+        <p class="admin-status" id="admin-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </dialog>
+
+  <script>
+    const progress = document.querySelector(".scroll-progress");
+    const cursor = document.querySelector(".cursor");
+    const parallaxImage = document.querySelector(".parallax-image");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function updateScrollEffects() {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.transform = `scaleX(${scrollable > 0 ? window.scrollY / scrollable : 0})`;
+      if (!reducedMotion && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        parallaxImage.style.transform = `translateY(${window.scrollY * 0.035}px) scale(1.05)`;
+      }
+    }
+    window.addEventListener("scroll", updateScrollEffects, { passive: true });
+    updateScrollEffects();
+
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      window.addEventListener("pointermove", (event) => {
+        cursor.style.left = `${event.clientX}px`;
+        cursor.style.top = `${event.clientY}px`;
+        cursor.classList.add("is-visible");
+      }, { passive: true });
+      document.querySelectorAll("a, button, .gallery-item, .wish-card").forEach((element) => {
+        element.addEventListener("pointerenter", () => cursor.classList.add("is-hovering"));
+        element.addEventListener("pointerleave", () => cursor.classList.remove("is-hovering"));
+      });
+      document.addEventListener("pointerleave", () => cursor.classList.remove("is-visible"));
+    }
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+
+    const wishButton = document.querySelector("#wish-button");
+    const wishNote = document.querySelector("#wish-note");
+    let wishNoteTimer;
+    wishButton.addEventListener("click", () => {
+      wishNote.classList.add("is-visible");
+      window.clearTimeout(wishNoteTimer);
+      wishNoteTimer = window.setTimeout(() => wishNote.classList.remove("is-visible"), 4200);
+    });
+
+    const adminDialog = document.querySelector("#admin-dialog");
+    const adminForm = document.querySelector("#admin-form");
+    const adminStatus = document.querySelector("#admin-status");
+    const adminStorageKey = "thuytrang-event-page-settings";
+    const ownerDeviceKey = "thuytrang-event-owner-device";
+    const adminTrigger = document.querySelector("#admin-open");
+    try {
+      adminTrigger.hidden = localStorage.getItem(ownerDeviceKey) !== "enabled";
+    } catch (error) {
+      adminTrigger.hidden = true;
+      console.warn("Không thể xác định quyền quản trị trên thiết bị này:", error);
+    }
+    const mediaDatabaseName = "thuytrang-event-media";
+    const mediaStoreName = "assets";
+    const imageFields = ["heroImage", "galleryImage1", "galleryImage2", "galleryImage3"];
+    const uploadFields = {
+      heroImageFile: { setting: "heroImage", asset: "hero" },
+      galleryImage1File: { setting: "galleryImage1", asset: "gallery-1" },
+      galleryImage2File: { setting: "galleryImage2", asset: "gallery-2" },
+      galleryImage3File: { setting: "galleryImage3", asset: "gallery-3" },
+      musicFile: { setting: "musicUrl", asset: "music" }
+    };
+    const defaultAdminSettings = {
+      brand: "Thùy Trang Event",
+      dateNote: "Ngày Quốc Tế Phụ Nữ",
+      heroGreeting: "Thân gửi những người phụ nữ tuyệt vời",
+      heroTitle: "Dành riêng\ncho nàng.",
+      heroSubtitle: "Một ngày để chậm lại, dịu dàng với chính mình — và nhớ rằng thế giới này đẹp hơn vì có bạn.",
+      message: "Cảm ơn các chị, các em — vì sự tận tâm trong từng chi tiết, sự ấm áp trong mỗi lần đồng hành và nguồn năng lượng khiến mọi khoảnh khắc trở nên đáng nhớ. Mong bạn luôn được trân trọng, được yêu thương và tự hào về chính mình.",
+      galleryTitle: "Một chút dịu dàng,\nmột trời thương mến.",
+      galleryDescription: "Cho những khoảnh khắc đẹp, những nụ cười thật tươi và tất cả điều khiến bạn là bạn.",
+      galleryCaption1: "Một bó hoa, ngàn lời thương",
+      galleryCaption2: "Nở rộ theo cách riêng",
+      galleryCaption3: "Dịu dàng và thật kiêu hãnh",
+      wishTitle1: "Luôn là chính mình",
+      wishText1: "Tự tin với nét riêng, tỏa sáng theo cách chẳng ai có thể thay thế.",
+      wishTitle2: "Được yêu thương đủ đầy",
+      wishText2: "Nhận về thật nhiều quan tâm, trân trọng — không chỉ riêng ngày hôm nay.",
+      wishTitle3: "Rực rỡ mọi hành trình",
+      wishText3: "Gặp nhiều niềm vui mới, nhiều cơ hội hay và những ngày bình yên.",
+      wishButton: "Nhận một lời chúc",
+      wishNote: "Bạn xứng đáng với mọi điều đẹp đẽ — hôm nay và mỗi ngày. ♡",
+      closingTitle: "Gửi nàng muôn\nvàn điều thương.",
+      closingMessage: "Chúc những người phụ nữ tuyệt vời của Thùy Trang Event một ngày 20/10 thật vui, thật xinh và ngập tràn yêu thương.",
+      footerNote: "Với tất cả yêu thương · 20.10",
+      pageTitle: "20.10 — Gửi những đóa hoa | Thùy Trang Event",
+      heroImage: "./1792462174832_213165376333846949_3439058882647357673_d2b63814b7ec7afd6f9dd9899ee2a494.jpg",
+      galleryImage1: "https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&w=900&q=80",
+      galleryImage2: "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=800&q=80",
+      galleryImage3: "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=900&q=80",
+      musicUrl: "./SƠN TÙNG M-TP  CHÚNG TA CỦA HIỆN TẠI  PIANO COVER   AN COONG.mp3",
+      musicTitle: "Chúng Ta Của Hiện Tại (Piano Cover)",
+      musicArtist: "AN COONG",
+      wine: "#713d4c",
+      paper: "#f7f2eb",
+      paperDeep: "#efe6dc",
+      rose: "#bc817e"
+    };
+    let mediaDatabasePromise;
+    let currentAdminSettings = { ...defaultAdminSettings };
+    let activeAudioSource = "";
+    const mediaObjectUrls = new Map();
+
+    function openMediaDatabase() {
+      if (!("indexedDB" in window)) return Promise.reject(new Error("Trình duyệt này không hỗ trợ lưu ảnh và nhạc."));
+      if (!mediaDatabasePromise) {
+        mediaDatabasePromise = new Promise((resolve, reject) => {
+          const request = indexedDB.open(mediaDatabaseName, 1);
+          request.onupgradeneeded = () => {
+            if (!request.result.objectStoreNames.contains(mediaStoreName)) request.result.createObjectStore(mediaStoreName);
+          };
+          request.onsuccess = () => resolve(request.result);
+          request.onerror = () => reject(request.error || new Error("Không mở được kho lưu tệp."));
+          request.onblocked = () => reject(new Error("Kho lưu tệp đang bị chặn bởi một cửa sổ khác."));
+        });
+      }
+      return mediaDatabasePromise;
+    }
+
+    async function putMediaAsset(key, file) {
+      const database = await openMediaDatabase();
+      await new Promise((resolve, reject) => {
+        const transaction = database.transaction(mediaStoreName, "readwrite");
+        transaction.objectStore(mediaStoreName).put(file, key);
+        transaction.oncomplete = resolve;
+        transaction.onerror = () => reject(transaction.error || new Error("Không lưu được tệp đã chọn."));
+        transaction.onabort = () => reject(transaction.error || new Error("Không lưu được tệp đã chọn."));
+      });
+    }
+
+    async function getMediaAsset(key) {
+      const database = await openMediaDatabase();
+      return new Promise((resolve, reject) => {
+        const request = database.transaction(mediaStoreName, "readonly").objectStore(mediaStoreName).get(key);
+        request.onsuccess = () => resolve(request.result || null);
+        request.onerror = () => reject(request.error || new Error("Không đọc được tệp đã lưu."));
+      });
+    }
+
+    async function clearMediaAssets() {
+      const database = await openMediaDatabase();
+      await new Promise((resolve, reject) => {
+        const transaction = database.transaction(mediaStoreName, "readwrite");
+        transaction.objectStore(mediaStoreName).clear();
+        transaction.oncomplete = resolve;
+        transaction.onerror = () => reject(transaction.error || new Error("Không xóa được tệp đã lưu."));
+        transaction.onabort = () => reject(transaction.error || new Error("Không xóa được tệp đã lưu."));
+      });
+    }
+
+    function setAdminFieldValues(settings) {
+      Object.entries(settings).forEach(([key, value]) => {
+        const field = adminForm.elements.namedItem(key);
+        if (field && field.type !== "file") field.value = value.startsWith("indexeddb:") ? "" : value;
+      });
+    }
+
+    function renderHeadline(element, text) {
+      const lines = text.split("\n");
+      element.replaceChildren();
+      lines.forEach((line, index) => {
+        if (index > 0) element.append(document.createElement("br"));
+        if (index === lines.length - 1) {
+          const emphasisStart = line.lastIndexOf(" ");
+          if (emphasisStart >= 0) element.append(document.createTextNode(line.slice(0, emphasisStart + 1)));
+          const emphasis = document.createElement("em");
+          emphasis.textContent = line.slice(Math.max(0, emphasisStart + 1));
+          element.append(emphasis);
+        } else {
+          element.append(document.createTextNode(line));
+        }
+      });
+    }
+
+    async function setImageSource(field, source) {
+      const image = document.querySelector(`[data-admin="${field}"]`);
+      if (image.dataset.currentSource === source) return;
+      image.dataset.currentSource = source;
+      if (source.startsWith("indexeddb:")) {
+        try {
+          const blob = await getMediaAsset(source.slice("indexeddb:".length));
+          if (!blob) throw new Error("Không tìm thấy ảnh đã tải lên.");
+          const oldUrl = mediaObjectUrls.get(source);
+          if (oldUrl) URL.revokeObjectURL(oldUrl);
+          const url = URL.createObjectURL(blob);
+          mediaObjectUrls.set(source, url);
+          image.src = url;
+        } catch (error) {
+          console.warn(`Không đọc được ảnh ${field}; dùng ảnh mặc định.`, error);
+          image.dataset.currentSource = defaultAdminSettings[field];
+          image.src = defaultAdminSettings[field];
+        }
+      } else {
+        image.src = source;
+      }
+    }
+
+    async function applyAdminSettings(settings, includeMedia = true) {
+      document.querySelectorAll('[data-admin="brand"]').forEach((element) => { element.textContent = settings.brand; });
+      document.querySelector('[data-admin="dateNote"]').textContent = settings.dateNote;
+      document.querySelector('[data-admin="heroGreeting"]').textContent = settings.heroGreeting;
+      document.querySelector('[data-admin="heroSubtitle"]').textContent = settings.heroSubtitle;
+      document.querySelector('[data-admin="message"]').textContent = settings.message;
+      document.querySelector('[data-admin="galleryDescription"]').textContent = settings.galleryDescription;
+      document.querySelector('[data-admin="closingMessage"]').textContent = settings.closingMessage;
+      document.querySelector('[data-admin="footerNote"]').textContent = settings.footerNote;
+      document.querySelector('[data-admin="wishNote"]').textContent = settings.wishNote;
+      document.querySelector('[data-admin="wishButton"]').textContent = settings.wishButton;
+      [1, 2, 3].forEach((index) => {
+        document.querySelector(`[data-admin="wishTitle${index}"]`).textContent = settings[`wishTitle${index}`];
+        document.querySelector(`[data-admin="wishText${index}"]`).textContent = settings[`wishText${index}`];
+        document.querySelector(`[data-admin="galleryCaption${index}"]`).textContent = settings[`galleryCaption${index}`];
+      });
+      renderHeadline(document.querySelector('[data-admin="heroTitle"]'), settings.heroTitle);
+      renderHeadline(document.querySelector('[data-admin="galleryTitle"]'), settings.galleryTitle);
+      renderHeadline(document.querySelector('[data-admin="closingTitle"]'), settings.closingTitle);
+      document.title = settings.pageTitle;
+      document.documentElement.style.setProperty("--wine", settings.wine);
+      document.documentElement.style.setProperty("--paper", settings.paper);
+      document.documentElement.style.setProperty("--paper-deep", settings.paperDeep);
+      document.documentElement.style.setProperty("--rose", settings.rose);
+      document.querySelector("#music-title").textContent = settings.musicTitle || "Nhạc nền";
+      document.querySelector("#music-artist").textContent = settings.musicArtist || "Chạm để phát";
+      if (includeMedia) {
+        await Promise.all(imageFields.map((field) => setImageSource(field, settings[field])));
+        const audio = document.querySelector("#background-audio");
+        const dock = document.querySelector("#admin-music");
+        let source = settings.musicUrl;
+        if (source.startsWith("indexeddb:")) {
+          try {
+            const blob = await getMediaAsset(source.slice("indexeddb:".length));
+            if (!blob) throw new Error("Không tìm thấy nhạc đã tải lên.");
+            if (!mediaObjectUrls.has(source)) mediaObjectUrls.set(source, URL.createObjectURL(blob));
+            source = mediaObjectUrls.get(source);
+          } catch (error) {
+            console.warn("Không đọc được nhạc đã tải lên; dùng tệp nhạc mặc định.", error);
+            settings.musicUrl = defaultAdminSettings.musicUrl;
+            settings.musicTitle = defaultAdminSettings.musicTitle;
+            settings.musicArtist = defaultAdminSettings.musicArtist;
+            source = settings.musicUrl;
+          }
+        }
+        if (source !== activeAudioSource) {
+          audio.pause();
+          audio.src = source;
+          audio.load();
+          activeAudioSource = source;
+        }
+        dock.hidden = !source;
+        if (source && audio.paused) attemptBackgroundMusic();
+      }
+    }
+
+    function readAdminSettings() {
+      const storedSettings = localStorage.getItem(adminStorageKey);
+      if (!storedSettings) return { ...defaultAdminSettings };
+      const parsedSettings = JSON.parse(storedSettings);
+      const settings = { ...defaultAdminSettings };
+      Object.keys(settings).forEach((key) => {
+        if (typeof parsedSettings[key] === "string") settings[key] = parsedSettings[key];
+      });
+      if (!settings.musicUrl || (settings.musicUrl.startsWith("indexeddb:") && !settings.musicTitle && !settings.musicArtist)) {
+        settings.musicUrl = defaultAdminSettings.musicUrl;
+        settings.musicTitle = defaultAdminSettings.musicTitle;
+        settings.musicArtist = defaultAdminSettings.musicArtist;
+      }
+      return settings;
+    }
+
+    function collectAdminSettings() {
+      const settings = { ...currentAdminSettings };
+      for (const [key, value] of new FormData(adminForm).entries()) {
+        if (typeof value !== "string" || !(key in settings)) continue;
+        if (!imageFields.includes(key) && key !== "musicUrl") settings[key] = value;
+        else if (value.trim()) settings[key] = value.trim();
+      }
+      return settings;
+    }
+
+    function validateMediaUrls(settings) {
+      for (const field of [...imageFields, "musicUrl"]) {
+        const value = settings[field];
+        if (!value || value.startsWith("indexeddb:")) continue;
+        let parsed;
+        try {
+          parsed = new URL(value, window.location.href);
+        } catch {
+          throw new Error(`Đường dẫn ${field === "musicUrl" ? "âm thanh" : "ảnh"} chưa hợp lệ.`);
+        }
+        const isRelativeImagePath = imageFields.includes(field) && !/^[a-z][a-z\d+.-]*:/i.test(value);
+        if (parsed.protocol !== "https:" && parsed.protocol !== "http:" && !isRelativeImagePath) {
+          throw new Error("Đường dẫn ảnh và âm thanh chỉ được dùng http:// hoặc https://.");
+        }
+      }
+    }
+
+    function showFilePreview(input, file, asset) {
+      const objectUrl = URL.createObjectURL(file);
+      const previousUrl = mediaObjectUrls.get(`preview:${asset}`);
+      if (previousUrl) URL.revokeObjectURL(previousUrl);
+      mediaObjectUrls.set(`preview:${asset}`, objectUrl);
+      if (asset === "music") {
+        const preview = document.querySelector("#admin-audio-preview");
+        preview.src = objectUrl;
+        preview.hidden = false;
+      } else {
+        const setting = uploadFields[input.name].setting;
+        const image = document.querySelector(`[data-admin="${setting}"]`);
+        image.src = objectUrl;
+        image.dataset.currentSource = `preview:${asset}`;
+        if (asset === "hero") {
+          const heroPreview = document.querySelector("#hero-preview");
+          heroPreview.src = objectUrl;
+          heroPreview.hidden = false;
+        }
+      }
+    }
+
+    async function initializeAdmin() {
+      try {
+        currentAdminSettings = readAdminSettings();
+        setAdminFieldValues(currentAdminSettings);
+        await applyAdminSettings(currentAdminSettings);
+        const heroPreview = document.querySelector("#hero-preview");
+        if (currentAdminSettings.heroImage.startsWith("indexeddb:")) {
+          heroPreview.src = mediaObjectUrls.get(currentAdminSettings.heroImage);
+        } else {
+          heroPreview.src = currentAdminSettings.heroImage;
+        }
+        heroPreview.hidden = false;
+      } catch (error) {
+        adminStatus.textContent = `Không thể tải cài đặt: ${error.message}`;
+        console.error("Không thể tải cài đặt tùy chỉnh:", error);
+      }
+    }
+    initializeAdmin();
+
+    let autoPlayGesturePending = false;
+    function attemptBackgroundMusic() {
+      const audio = document.querySelector("#background-audio");
+      if (!audio.src || !audio.paused) return;
+      audio.play().then(() => {
+        autoPlayGesturePending = false;
+        const button = document.querySelector("#music-toggle");
+        button.textContent = "Ⅱ";
+        button.setAttribute("aria-label", "Tạm dừng nhạc nền");
+        document.querySelector("#music-artist").textContent = `${currentAdminSettings.musicArtist || "Nhạc nền"} · Đang phát`;
+      }).catch((error) => {
+        if (error.name === "NotAllowedError") {
+          autoPlayGesturePending = true;
+          document.querySelector("#music-artist").textContent = "Chạm để bật nhạc";
+          return;
+        }
+        document.querySelector("#music-artist").textContent = "Không tải được nhạc";
+        console.error("Không thể tự phát nhạc nền:", error);
+      });
+    }
+    ["pointerdown", "keydown", "touchstart"].forEach((eventName) => {
+      window.addEventListener(eventName, () => {
+        if (autoPlayGesturePending) attemptBackgroundMusic();
+      }, { passive: true });
+    });
+
+    document.querySelectorAll(".admin-tab").forEach((tab) => {
+      tab.addEventListener("click", () => {
+        document.querySelectorAll(".admin-tab").forEach((item) => item.setAttribute("aria-selected", String(item === tab)));
+        document.querySelectorAll(".admin-panel").forEach((panel) => { panel.hidden = panel.id !== tab.getAttribute("aria-controls"); });
+      });
+      tab.addEventListener("keydown", (event) => {
+        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+        event.preventDefault();
+        const tabs = [...document.querySelectorAll(".admin-tab")];
+        const direction = event.key === "ArrowRight" ? 1 : -1;
+        const nextTab = tabs[(tabs.indexOf(tab) + direction + tabs.length) % tabs.length];
+        nextTab.click();
+        nextTab.focus();
+      });
+    });
+
+    document.querySelector("#admin-open").addEventListener("click", () => {
+      setAdminFieldValues(currentAdminSettings);
+      adminStatus.textContent = "";
+      adminDialog.showModal();
+    });
+    document.querySelector("#admin-close").addEventListener("click", () => adminDialog.close());
+    adminDialog.addEventListener("click", (event) => {
+      if (event.target === adminDialog) adminDialog.close();
+    });
+    adminForm.addEventListener("input", () => {
+      applyAdminSettings(collectAdminSettings(), false);
+      adminStatus.textContent = "Đang xem trước — bấm Lưu & áp dụng để lưu thay đổi.";
+    });
+
+    Object.entries(uploadFields).forEach(([fieldName, config]) => {
+      const input = adminForm.elements.namedItem(fieldName);
+      input.addEventListener("change", () => {
+        const file = input.files[0];
+        if (!file) return;
+        const expectedType = config.asset === "music" ? "audio/" : "image/";
+        const maxBytes = config.asset === "music" ? 30 * 1024 * 1024 : 12 * 1024 * 1024;
+        if (!file.type.startsWith(expectedType)) {
+          input.value = "";
+          adminStatus.textContent = config.asset === "music" ? "Hãy chọn tệp âm thanh hợp lệ." : "Hãy chọn tệp hình ảnh hợp lệ.";
+          return;
+        }
+        if (file.size > maxBytes) {
+          input.value = "";
+          adminStatus.textContent = config.asset === "music" ? "Tệp nhạc tối đa 30 MB." : "Ảnh tải lên tối đa 12 MB.";
+          return;
+        }
+        showFilePreview(input, file, config.asset);
+        adminStatus.textContent = `${file.name} đã sẵn sàng — bấm Lưu & áp dụng để lưu.`;
+      });
+    });
+
+    imageFields.forEach((field) => {
+      adminForm.elements.namedItem(field).addEventListener("input", (event) => {
+        const source = event.target.value.trim();
+        if (!source) return;
+        const image = document.querySelector(`[data-admin="${field}"]`);
+        image.src = source;
+        image.dataset.currentSource = source;
+        if (field === "heroImage") document.querySelector("#hero-preview").src = source;
+      });
+    });
+    adminForm.elements.namedItem("musicUrl").addEventListener("input", (event) => {
+      const preview = document.querySelector("#admin-audio-preview");
+      if (event.target.value.trim()) {
+        preview.src = event.target.value;
+        preview.hidden = false;
+      }
+    });
+    document.querySelector("#music-toggle").addEventListener("click", async (event) => {
+      const audio = document.querySelector("#background-audio");
+      const button = event.currentTarget;
+      try {
+        if (audio.paused) {
+          await audio.play();
+          button.textContent = "Ⅱ";
+          button.setAttribute("aria-label", "Tạm dừng nhạc nền");
+        } else {
+          audio.pause();
+          button.textContent = "▶";
+          button.setAttribute("aria-label", "Phát nhạc nền");
+        }
+      } catch (error) {
+        adminStatus.textContent = "Không phát được tệp nhạc. Hãy kiểm tra định dạng hoặc đường dẫn.";
+        console.error("Không phát được nhạc nền:", error);
+      }
+    });
+    document.querySelector("#background-audio").addEventListener("error", () => {
+      if (currentAdminSettings.musicUrl === defaultAdminSettings.musicUrl) {
+        document.querySelector("#music-artist").textContent = "Không tải được nhạc";
+        return;
+      }
+      console.warn("Không tải được nhạc tùy chỉnh; chuyển sang tệp nhạc mặc định.");
+      currentAdminSettings = {
+        ...currentAdminSettings,
+        musicUrl: defaultAdminSettings.musicUrl,
+        musicTitle: defaultAdminSettings.musicTitle,
+        musicArtist: defaultAdminSettings.musicArtist
+      };
+      applyAdminSettings(currentAdminSettings).catch((error) => {
+        document.querySelector("#music-artist").textContent = "Không tải được nhạc";
+        console.error("Không tải được tệp nhạc mặc định:", error);
+      });
+    });
+    document.querySelector("#background-audio").addEventListener("pause", () => {
+      const button = document.querySelector("#music-toggle");
+      button.textContent = "▶";
+      button.setAttribute("aria-label", "Phát nhạc nền");
+    });
+    document.querySelector("#background-audio").addEventListener("playing", () => {
+      document.querySelector("#music-artist").textContent = `${currentAdminSettings.musicArtist || "Nhạc nền"} · Đang phát`;
+    });
+
+    adminForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      adminStatus.textContent = "Đang lưu...";
+      try {
+        const settings = collectAdminSettings();
+        for (const [fieldName, config] of Object.entries(uploadFields)) {
+          const file = adminForm.elements.namedItem(fieldName).files[0];
+          if (!file) continue;
+          await putMediaAsset(config.asset, file);
+          settings[config.setting] = `indexeddb:${config.asset}`;
+        }
+        validateMediaUrls(settings);
+        localStorage.setItem(adminStorageKey, JSON.stringify(settings));
+        currentAdminSettings = settings;
+        await applyAdminSettings(currentAdminSettings);
+        setAdminFieldValues(currentAdminSettings);
+        adminForm.querySelectorAll('input[type="file"]').forEach((input) => { input.value = ""; });
+        document.querySelector("#admin-audio-preview").hidden = true;
+        adminStatus.textContent = "Đã lưu và áp dụng cài đặt trên trình duyệt này.";
+      } catch (error) {
+        adminStatus.textContent = `Không lưu được: ${error.message}`;
+        console.error("Không thể lưu cài đặt tùy chỉnh:", error);
+      }
+    });
+    document.querySelector("#admin-reset").addEventListener("click", async () => {
+      try {
+        await clearMediaAssets();
+        localStorage.removeItem(adminStorageKey);
+        currentAdminSettings = { ...defaultAdminSettings };
+        await applyAdminSettings(currentAdminSettings);
+        setAdminFieldValues(currentAdminSettings);
+        adminForm.querySelectorAll('input[type="file"]').forEach((input) => { input.value = ""; });
+        document.querySelector("#admin-audio-preview").hidden = true;
+        adminStatus.textContent = "Đã khôi phục nội dung, giao diện và ảnh mặc định.";
+      } catch (error) {
+        adminStatus.textContent = `Không thể khôi phục cài đặt: ${error.message}`;
+        console.error("Không thể khôi phục cài đặt mặc định:", error);
+      }
+    });
+  </script>
+</body>
+</html>
